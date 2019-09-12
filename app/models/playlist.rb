@@ -1,6 +1,6 @@
 class Playlist < ApplicationRecord
   belongs_to :user
 
-  validates :name, presence: true, uniqueness: true
+  validates_presence_of :name, uniqueness: true
 
 end
