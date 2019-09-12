@@ -15,7 +15,7 @@ class SongsController < ApplicationController
      song = Song.find(params[:id])
      playlist = song.playlist
      song.destroy
-     redirect_to playlist_path(song.playlist), notice: 'Comentario eliminado con exito'
+     redirect_to playlist_path(song.playlist), notice: 'canción eliminado con exito'
      end
 
 

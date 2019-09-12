@@ -11,19 +11,20 @@
 </p>
 
 <%= form_with(model: [@playlist,Song.new], local: true) do |f| %>
-<%= f.text_area :artist %>
+<%= f.label :name %>
 <%= f.text_area :name %>
+<%= f.label :artist %>
+  <%= f.text_area :artist %>
 <%= f.submit :enviar %>
 <% end %>
-
-<hr>
-
+​
 <% @playlist.songs.each do |song| %>
-<li><%= song.artist %></li>
-<li><%= song.name %></li>
-    <%= link_to 'eliminar', song_path(song), method: :delete %>
+<ul>
+   <li><%= song.artist %> |
+   <%= song.name %> |
+   <%= link_to 'eliminar', song_path(song), method: :delete %></li>
+   </ul>
 <% end %>
-
 
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %> |
